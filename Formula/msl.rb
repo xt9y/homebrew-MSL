@@ -7,6 +7,7 @@ class Msl < Formula
 
   depends_on :macos
   depends_on xcode: ["15.0", :build]
+  depends_on "cmake" => :build
 
   def install
     system "cmake", "-S", ".", "-B", "build",
