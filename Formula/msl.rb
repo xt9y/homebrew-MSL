@@ -1,22 +1,19 @@
 class Msl < Formula
-  desc "macOS Subsystem for Linux — runs Arch Linux ARM via Virtualization.framework"
+  desc "macOS Subsystem for Linux — run Arch Linux on Apple's Virtualization.framework"
   homepage "https://github.com/xt9y/msl"
   url "https://github.com/xt9y/msl/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "2753304677af55156b68469ef16354662305bb77f285057335e2774c51eac790"
+  sha256 "4ac53cd6440e3e1d7dcbb6030eb70e4237e605501f0cb30a23349d399f70802f"
   license "MIT"
 
   depends_on :macos
-  depends_on "cmake" => :build
+  depends_on xcode: ["15.0", :build]
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-           "-DCMAKE_BUILD_TYPE=Release",
-           "-DCMAKE_OSX_DEPLOYMENT_TARGET=14.0"
-    system "cmake", "--build", "build"
+    system "make"
     bin.install "build/msl"
   end
 
   test do
-    system "#{bin}/msl", "version"
+    system "#{bin}/msl", "--version"
   end
 end
