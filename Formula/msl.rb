@@ -1,8 +1,8 @@
 class Msl < Formula
   desc "macOS Subsystem for Linux — run Arch Linux ARM via Virtualization.framework"
   homepage "https://github.com/xt9y/msl"
-  url "https://github.com/xt9y/msl/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "42e63a1448bcbfda5e8440e59dfe6b01b317089cbf0272529e9b15c8617d655c"
+  url "https://github.com/xt9y/msl/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "b8e4e8718c15d09869c867df2eb5a1b6ceb62e5397151f6b93188c1ca81d94ec"
   license "MIT"
 
   depends_on xcode: ["15.0", :build]
@@ -12,6 +12,7 @@ class Msl < Formula
     system "make"
     bin.install "build/msl"
     bin.install "build/msld" if File.exist?("build/msld")
+    (share/"msl").install "Guest/msld.c"
   end
 
   def caveats
