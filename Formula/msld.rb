@@ -1,8 +1,8 @@
 class Msld < Formula
   desc "Guest daemon for msl (macOS Subsystem for Linux)"
   homepage "https://github.com/xt9y/msl"
-  url "https://github.com/xt9y/msl/archive/refs/tags/v1.1.5.tar.gz"
-  sha256 "9c3aa2a03507c5a84cbd4a0296a55566ec27a736e8ae8cc689ed04b6f737a152"
+  url "https://github.com/xt9y/msl/archive/refs/tags/v1.1.6.tar.gz"
+  sha256 "d47397a6ae6e8c074e460134b3c79fbd142c5727f8a6695e18ac0902e63ef66d"
   license "MIT"
 
   depends_on "filosottile/musl-cross/musl-cross" => "with-aarch64"
