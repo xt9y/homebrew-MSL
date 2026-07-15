@@ -10,8 +10,9 @@ class Msld < Formula
 
   def install
     system "aarch64-linux-musl-gcc", "-static", "-Os", "-s", "-o", "msld", "Guest/msld.c"
-    FileUtils.chmod(0755, "msld")
-    bin.install "msld"
+    (bin/"msld").dirname.mkpath
+    FileUtils.cp("msld", bin/"msld")
+    FileUtils.chmod(0755, bin/"msld")
   end
 
   test do
