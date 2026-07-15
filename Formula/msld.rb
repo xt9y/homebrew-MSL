@@ -13,6 +13,10 @@ class Msld < Formula
     bin.install "msld"
   end
 
+  def post_install
+    chmod 0755, bin/"msld"
+  end
+
   test do
     assert_predicate bin/"msld", :exist?
   end
