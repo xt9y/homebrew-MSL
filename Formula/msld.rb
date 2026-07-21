@@ -10,6 +10,7 @@ class Msld < Formula
 
   def install
     system "zig", "cc", "-target", "aarch64-linux-musl", "-static", "-Os", "-s", "-o", "msld", "Guest/msld.c"
+    system "chmod", "+x", "msld"
     bin.install "msld"
   end
 
