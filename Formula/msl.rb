@@ -11,6 +11,7 @@ class Msl < Formula
 
   def install
     ENV["SWIFTC"] = "xcrun swiftc"
+    (buildpath/"Sources/Version.swift").write "import Foundation\nlet MSLVersion = \"#{version}\"\n"
     system "make", "sign"
     bin.install "build/msl"
   end
