@@ -13,6 +13,7 @@ class Msl < Formula
     ENV["SWIFTC"] = "xcrun swiftc"
     system "make", "sign"
     bin.install "build/msl"
+    (share/"msl").install "Resources/msl.entitlements"
   end
 
   test do
