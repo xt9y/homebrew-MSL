@@ -7,6 +7,8 @@ class Msl < Formula
 
   depends_on xcode: ["15.0", :build]
   depends_on "xt9y/msl/msld"
+  depends_on "e2fsprogs"
+  depends_on "socat"
   depends_on :macos
 
   def install
